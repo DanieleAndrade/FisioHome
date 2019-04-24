@@ -6,4 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".activity.TipoUsuarioActivity">
 
+    <Button
+        android:id="@+id/buttonTipoFisioterapeuta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Fisioterapeuta" />
+
+    <Button
+        android:id="@+id/buttonTipoPaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Paciente" />
 </LinearLayout>
