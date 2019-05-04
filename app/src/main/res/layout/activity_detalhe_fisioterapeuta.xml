@@ -19,6 +19,7 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:contentDescription="@string/fisioterapeuta"
             android:src="@drawable/ic_launcher_background" />
 
         <LinearLayout
@@ -51,11 +52,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/localizacao"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -72,11 +75,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/horarios"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -95,11 +100,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/contato"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -116,11 +123,13 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="4dp"
         android:layout_marginRight="4dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables">
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/preco"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
@@ -141,13 +150,14 @@
             android:id="@+id/cifrao"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="@string/rs_cifrao"/>
+            android:text="@string/rs_cifrao" />
 
         <TextView
             android:id="@+id/valor_preco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/_50_virgula_00"/>
+            android:layout_marginLeft="8dp"
+            android:text="@string/_50_virgula_00" />
     </LinearLayout>
 </LinearLayout>

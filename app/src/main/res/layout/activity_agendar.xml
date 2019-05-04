@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:orientation="vertical"
     tools:context=".activity.AgendarActivity">
-
 
     <LinearLayout
         android:id="@+id/linear_data_agendamento"
@@ -21,13 +19,14 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/dia"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="06/05" />
+            android:text="@string/_06_05" />
     </LinearLayout>
 
     <LinearLayout
@@ -42,13 +41,14 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/local"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Local" />
+            android:text="@string/local" />
     </LinearLayout>
 
 
@@ -64,13 +64,14 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/nome"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Doulgas Funny" />
+            android:text="@string/doulgas_funny" />
     </LinearLayout>
 
     <LinearLayout
@@ -85,13 +86,14 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/meio_de_pagamento"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Dinheiro" />
+            android:text="@string/dinheiro" />
     </LinearLayout>
 
     <LinearLayout
@@ -106,21 +108,22 @@
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
+            android:contentDescription="@string/motivo"
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="Motivo" />
+            android:text="@string/motivo" />
     </LinearLayout>
 
     <Button
         android:id="@+id/button_confirmar_agendamento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:layout_marginTop="100dp"
-        android:text="confirmar" />
+        android:padding="16dp"
+        android:text="@string/confirmar" />
 
 </LinearLayout>

@@ -17,21 +17,24 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Agendados" />
+            android:text="@string/agendados"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/button__agendamentos_cancelados"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Cancelados" />
+            android:text="@string/cancelados"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/button__agendamentos_realizados"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Realizados" />
+            android:text="@string/realizados"
+            tools:ignore="ButtonStyle" />
 
     </LinearLayout>
 

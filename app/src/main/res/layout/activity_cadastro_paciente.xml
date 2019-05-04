@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".activity.CadastroPacienteActivity"
     android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
-
+    android:layout_marginRight="10dp"
+    android:orientation="vertical"
+    tools:context=".activity.CadastroPacienteActivity">
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Nome"
-        android:layout_marginTop="16dp"/>
+        android:text="@string/nome"
+        tools:ignore="Autofill,LabelFor" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,21 +27,24 @@
             android:id="@+id/idade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Idade"
-            android:layout_weight="1"/>
+            android:text="@string/idade"
+            tools:ignore="Autofill,LabelFor" />
 
         <EditText
             android:id="@+id/sexo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Sexo"
-            android:layout_weight="1"/>
+            android:text="@string/sexo"
+            tools:ignore="Autofill,LabelFor" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,19 +54,21 @@
             android:id="@+id/peso"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Peso"
-            android:layout_weight="1"/>
+            android:text="@string/peso"
+            tools:ignore="Autofill,LabelFor" />
 
         <EditText
             android:id="@+id/altura"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Altura"
-            android:layout_weight="1"/>
+            android:text="@string/altura"
+            tools:ignore="Autofill,LabelFor" />
 
     </LinearLayout>
 
@@ -72,24 +76,27 @@
         android:id="@+id/observacao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:inputType="textMultiLine"
         android:maxLines="4"
-        android:layout_marginRight="10dp"/>
+        tools:ignore="Autofill,LabelFor" />
 
     <TextView
         android:id="@+id/enderecoPaciente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Endereço" />
+        android:text="@string/endereco" />
 
     <EditText
         android:id="@+id/logradouro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Logradouro"
-        android:layout_marginTop="16dp"/>
+        android:text="@string/logradouro"
+        tools:ignore="Autofill,LabelFor" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -100,19 +107,21 @@
             android:id="@+id/numero"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Numero"
-            android:layout_weight="1"/>
+            android:text="@string/numero"
+            tools:ignore="Autofill,LabelFor" />
 
         <EditText
             android:id="@+id/bairro"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Bairro"
-            android:layout_weight="1"/>
+            android:text="@string/bairro"
+            tools:ignore="Autofill,LabelFor" />
 
     </LinearLayout>
 
@@ -124,19 +133,21 @@
             android:id="@+id/estado"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Estado"
-            android:layout_weight="1"/>
+            android:text="@string/estado"
+            tools:ignore="Autofill,LabelFor" />
 
         <EditText
             android:id="@+id/cidade"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Cidade"
-            android:layout_weight="1"/>
+            android:text="@string/cidade"
+            tools:ignore="Autofill,LabelFor" />
 
     </LinearLayout>
 
@@ -144,10 +155,11 @@
         android:id="@+id/cep"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="CEP"
-        android:layout_marginTop="16dp"/>
+        android:text="@string/cep"
+        tools:ignore="Autofill,LabelFor" />
 
     <Button
         android:id="@+id/button_finalizar"
@@ -155,6 +167,6 @@
         android:layout_height="58dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Button" />
+        android:text="@string/button" />
 
 </LinearLayout>
