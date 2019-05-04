@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ConsultaActivity"></activity>
+        <activity android:name=".activity.DetalheFisioterapeutaActivity"></activity>
+        <activity android:name=".activity.ConsultaActivity" />
         <activity android:name=".activity.VisualizarMedicoActivity" />
         <activity android:name=".activity.AgendamentosActivity" />
         <activity android:name=".activity.AgendarActivity" />
@@ -24,7 +25,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
     </application>
 
 </manifest>
