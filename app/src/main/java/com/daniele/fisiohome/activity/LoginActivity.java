@@ -1,9 +1,10 @@
 package com.daniele.fisiohome.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
+
+import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -96,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
                         autenticacao.createUserWithEmailAndPassword(
                                 email, senha
                         ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @SuppressLint("NewApi")
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
@@ -108,10 +112,10 @@ public class LoginActivity extends AppCompatActivity {
 
                                 } else {
 
-                                    String erroExcecao = "";
+                                    String erroExcecao;
 
                                     try {
-                                        throw task.getException();
+                                        throw Objects.requireNonNull(task.getException());
                                     } catch (FirebaseAuthWeakPasswordException e) {
                                         erroExcecao = "Digite uma senha mais forte!";
                                     } catch (FirebaseAuthInvalidCredentialsException e) {

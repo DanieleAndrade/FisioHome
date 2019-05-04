@@ -1,8 +1,8 @@
 package com.daniele.fisiohome.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.daniele.fisiohome.R;
 
@@ -14,7 +14,7 @@ public class AgendamentosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_agendamentos);
     }
 
-    public void visualizarAgedamento(){
+    public void visualizarAgedamento() {
         Intent intent = new Intent(this, AgendarActivity.class);
         startActivity(intent);
     }

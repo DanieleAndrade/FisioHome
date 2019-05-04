@@ -1,7 +1,7 @@
 package com.daniele.fisiohome.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.daniele.fisiohome.R;
 
