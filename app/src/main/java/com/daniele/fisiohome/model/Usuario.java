@@ -8,8 +8,6 @@ public class Usuario {
     private String senha;
     private String tipo;
 
-    public Usuario() {}
-
     public String getId() {
         return id;
     }

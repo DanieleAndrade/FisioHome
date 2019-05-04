@@ -9,8 +9,6 @@ public class Pagamento {
     private double valor;
     private Paciente paciente;
 
-    public Pagamento() {}
-
     public String getNumeroCartao() {
         return numeroCartao;
     }

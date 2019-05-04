@@ -12,8 +12,6 @@ public class Paciente extends Usuario {
     private double altura;
     private String observacao;
 
-    public Paciente(){}
-
     public Endereco getEndereco() {
         return endereco;
     }

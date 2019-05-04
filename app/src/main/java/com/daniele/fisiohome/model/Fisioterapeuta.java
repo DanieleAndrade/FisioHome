@@ -1,7 +1,6 @@
 package com.daniele.fisiohome.model;
 
 import java.sql.Blob;
-import java.util.Date;
 import java.util.List;
 
 public class Fisioterapeuta extends Usuario {
@@ -12,8 +11,6 @@ public class Fisioterapeuta extends Usuario {
     private double precoConsulta;
     private List<Disponibilidade> disponibilidade;
     private String observacao;
-
-    public Fisioterapeuta(){}
 
     public Endereco getEnderecoFisioterapeuta() {
         return enderecoFisioterapeuta;

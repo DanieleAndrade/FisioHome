@@ -1,7 +1,5 @@
 package com.daniele.fisiohome.model;
 
-import java.util.Date;
-
 public class Disponibilidade {
 
     private String dias;
