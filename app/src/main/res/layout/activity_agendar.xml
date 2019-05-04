@@ -4,12 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    android:orientation="vertical"
     tools:context=".activity.AgendarActivity">
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:id="@+id/linear_data_agendamento"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Confirmar" />
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="06/05" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_horarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Local" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linear_agendamento_fisioterapeuta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Doulgas Funny" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_cartao_agendamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Dinheiro" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_motivo_agendamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Motivo" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_confirmar_agendamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="100dp"
+        android:text="confirmar" />
+
 </LinearLayout>
