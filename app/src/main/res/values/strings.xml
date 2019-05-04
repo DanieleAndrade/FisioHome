@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Fisio Home</string>
+    <string name="douglas">Douglas</string>
+    <string name="abcdef_ghijk">abcdef ghijk</string>
+    <string name="localizacao">Localização</string>
+    <string name="horarios">Horários</string>
+    <string name="contato">Contato</string>
+    <string name="preco">Preço</string>
+    <string name="rs_cifrao">R$</string>
+    <string name="_50_virgula_00">50,00</string>
 </resources>
