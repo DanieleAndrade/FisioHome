@@ -31,12 +31,14 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/nome_fisioterapeuta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:text="@string/nome" />
 
                 <TextView
+                    android:id="@+id/crm_fisioterapeuta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"

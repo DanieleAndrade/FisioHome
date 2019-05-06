@@ -30,6 +30,7 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/listview_fisioterapeutas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_lista_fisioterapeutas" />
