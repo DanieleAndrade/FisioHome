@@ -23,6 +23,7 @@
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
+            android:id="@+id/data_agendamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -45,6 +46,7 @@
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
+            android:id="@+id/local_agendamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -68,6 +70,7 @@
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
+            android:id="@+id/fisioterapeuta_agendamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -90,6 +93,7 @@
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
+            android:id="@+id/pagamento_agendamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -112,6 +116,7 @@
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
+            android:id="@+id/motivo_agendamento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
