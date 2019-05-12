@@ -1,5 +1,8 @@
 package com.daniele.fisiohome.model;
 
+import com.daniele.fisiohome.helper.ConfiguracaoFirebase;
+import com.google.firebase.database.DatabaseReference;
+
 import java.sql.Blob;
 
 public class Paciente extends Usuario {
@@ -15,13 +18,10 @@ public class Paciente extends Usuario {
     private String cpf;
     private String pacienteId;
 
-    public Paciente(String pacienteId, String nome, String cpf) {
-        this.pacienteId = pacienteId;
-        this.nome = nome;
-        this.cpf = cpf;
-    }
-
-    public Paciente() {
+    public void salvar(){
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebase();
+        DatabaseReference pacientesRef = firebaseRef.child("pacientes").child( getId() );
+        pacientesRef.setValue( this );
     }
 
     public Endereco getEndereco() {

@@ -30,7 +30,8 @@ public class CadastroPacienteActivity extends AppCompatActivity {
     private EditText campoEmail, campoSenha;
     private EditText campoNomePaciente, campoCPF;
     private FirebaseAuth autenticacao;
-    private DatabaseReference databasePacientes;
+    private Paciente paciente;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,6 @@ public class CadastroPacienteActivity extends AppCompatActivity {
 
         inicializaComponentes();
         autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
-        databasePacientes = ConfiguracaoFirebase.getFirebase().getDatabase().getReference("Pacientes");
 
         botaoCadastrarPaciente.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,64 +50,114 @@ public class CadastroPacienteActivity extends AppCompatActivity {
                 String nome = campoNomePaciente.getText().toString().trim();
                 String cpf = campoCPF.getText().toString().trim();
 
-                if (!nome.isEmpty() && !cpf.isEmpty()) {
+                if( !nome.isEmpty() ){
+                    if( !email.isEmpty() ){
+                        if( !senha.isEmpty() ){
+                            if(!cpf.isEmpty() ) {
+                                paciente = new Paciente();
+                                paciente.setNome(nome);
+                                paciente.setEmail(email);
+                                paciente.setSenha(senha);
+                                paciente.setCpf(cpf);
+                                cadastrar( paciente );
 
-                    String id = databasePacientes.push().getKey();
-                    Paciente paciente = new Paciente(id, nome, cpf);
-                    databasePacientes.child(id).setValue(paciente);
-
-                    Toast.makeText(CadastroPacienteActivity.this,
-                            "Cadastro realizado com sucesso!",
-                            Toast.LENGTH_SHORT).show();
-
-                } else {
-                    Toast.makeText(CadastroPacienteActivity.this, "Você deve digitar um nome e CPF", Toast.LENGTH_LONG).show();
-                }
-                if (!email.isEmpty()) {
-                    if (!senha.isEmpty()) {
-
-                        autenticacao.createUserWithEmailAndPassword(
-                                email, senha
-                        ).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @SuppressLint("NewApi")
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-
-                                    home();
-
-                                } else {
-
-                                    String erroExcecao;
-
-                                    try {
-                                        throw Objects.requireNonNull(task.getException());
-                                    } catch (FirebaseAuthWeakPasswordException e) {
-                                        erroExcecao = "Digite uma senha mais forte!";
-                                    } catch (FirebaseAuthInvalidCredentialsException e) {
-                                        erroExcecao = "Por favor, digite um e-mail válido";
-                                    } catch (FirebaseAuthUserCollisionException e) {
-                                        erroExcecao = "Este conta já foi cadastrada";
-                                    } catch (Exception e) {
-                                        erroExcecao = "ao cadastrar usuário: " + e.getMessage();
-                                        e.printStackTrace();
-                                    }
-
-                                    Toast.makeText(CadastroPacienteActivity.this,
-                                            "Erro: " + erroExcecao,
-                                            Toast.LENGTH_SHORT).show();
-                                }
+                            }else{
+                                Toast.makeText(CadastroPacienteActivity.this,
+                                        "Preencha o CPF!",
+                                        Toast.LENGTH_SHORT).show();
                             }
-                        });
+
+                        }else{
+                            Toast.makeText(CadastroPacienteActivity.this,
+                                    "Preencha a senha!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(CadastroPacienteActivity.this,
+                                "Preencha o email!",
+                                Toast.LENGTH_SHORT).show();
                     }
+                }else{
+                    Toast.makeText(CadastroPacienteActivity.this,
+                            "Preencha o nome!",
+                            Toast.LENGTH_SHORT).show();
                 }
+
+
             }
-
-
         });
+
+
     }
 
+    /**
+     * Método responsável por cadastrar usuário com e-mail e senha
+     * e fazer validações ao fazer o cadastro
+     */
+    public void cadastrar(final Paciente paciente){
 
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutenticacao();
+        autenticacao.createUserWithEmailAndPassword(
+                paciente.getEmail(),
+                paciente.getSenha()
+        ).addOnCompleteListener(
+                this,
+                new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+
+                        if( task.isSuccessful() ){
+
+                            try {
+
+
+                                //Salvar dados no firebase
+                                String idPaciente = task.getResult().getUser().getUid();
+                                paciente.setId( idPaciente );
+                                paciente.salvar();
+
+                                Toast.makeText(CadastroPacienteActivity.this,
+                                        "Cadastro com sucesso",
+                                        Toast.LENGTH_SHORT).show();
+
+                                startActivity( new Intent(getApplicationContext(), HomeActivity.class));
+                                finish();
+
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
+
+
+
+                        }else {
+
+
+                            String erroExcecao = "";
+                            try{
+                                throw task.getException();
+                            }catch (FirebaseAuthWeakPasswordException e){
+                                erroExcecao = "Digite uma senha mais forte!";
+                            }catch (FirebaseAuthInvalidCredentialsException e){
+                                erroExcecao = "Por favor, digite um e-mail válido";
+                            }catch (FirebaseAuthUserCollisionException e){
+                                erroExcecao = "Este conta já foi cadastrada";
+                            } catch (Exception e) {
+                                erroExcecao = "ao cadastrar usuário: "  + e.getMessage();
+                                e.printStackTrace();
+                            }
+
+                            Toast.makeText(CadastroPacienteActivity.this,
+                                    "Erro: " + erroExcecao ,
+                                    Toast.LENGTH_SHORT).show();
+
+
+                        }
+
+                    }
+                }
+        );
+
+    }
     private void inicializaComponentes() {
         campoEmail = findViewById(R.id.editCadastroEmail);
         campoSenha = findViewById(R.id.editCadastroSenha);
