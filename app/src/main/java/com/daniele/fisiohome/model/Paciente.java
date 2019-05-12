@@ -11,6 +11,18 @@ public class Paciente extends Usuario {
     private double peso;
     private double altura;
     private String observacao;
+    private String nome;
+    private String cpf;
+    private String pacienteId;
+
+    public Paciente(String pacienteId, String nome, String cpf) {
+        this.pacienteId = pacienteId;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    public Paciente() {
+    }
 
     public Endereco getEndereco() {
         return endereco;
@@ -66,5 +78,31 @@ public class Paciente extends Usuario {
 
     public void setObservacao(String observacao) {
         this.observacao = observacao;
+    }
+
+    @Override
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getPacienteId() {
+        return pacienteId;
+    }
+
+    public void setPacienteId(String pacienteId) {
+        this.pacienteId = pacienteId;
     }
 }
