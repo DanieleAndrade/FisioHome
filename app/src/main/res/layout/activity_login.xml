@@ -52,5 +52,13 @@
         android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cadastrar" />
+        android:layout_marginTop="16dp"
+        android:text="@string/cadastrar_paciente" />
+
+    <Button
+        android:id="@+id/buttonCadastrarFisio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/cadastrar_fisioterapeuta" />
 </LinearLayout>

@@ -45,4 +45,6 @@
     <string name="hora">Hora</string>
     <string name="ver">Ver</string>
     <string name="crm">CRM</string>
+    <string name="cadastrar_paciente">Cadastrar Paciente</string>
+    <string name="cadastrar_fisioterapeuta">Cadastrar Fisioterapeuta</string>
 </resources>

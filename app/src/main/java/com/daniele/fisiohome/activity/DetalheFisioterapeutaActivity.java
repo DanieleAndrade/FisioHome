@@ -46,9 +46,9 @@ public class DetalheFisioterapeutaActivity extends AppCompatActivity {
         campoNomeFisioterapeuta.setText(FisioHome.getFisioterapeutaAtual().getNome());
         campoNumeroRegistroFisioterapeuta.setText(String.valueOf(FisioHome.getFisioterapeutaAtual().getNumeroRegistro()));
 
-        Endereco endereco = FisioHome.getFisioterapeutaAtual().getEnderecoFisioterapeuta();
-        String local = endereco.getLogradouro() + " - " + String.valueOf(endereco.getNumero()) + ", " + endereco.getCidade();
-        campoLocalFisioterapeuta.setText(local);
+//        Endereco endereco = FisioHome.getFisioterapeutaAtual().getEnderecoFisioterapeuta();
+//        String local = endereco.getLogradouro() + " - " + String.valueOf(endereco.getNumero()) + ", " + endereco.getCidade();
+        campoLocalFisioterapeuta.setText(FisioHome.getFisioterapeutaAtual().getLogradouro() + " - " + String.valueOf(FisioHome.getFisioterapeutaAtual().getNumero()) + ", " + FisioHome.getFisioterapeutaAtual().getCidade() );
 
         campoContatoFisioterapeuta.setText(FisioHome.getFisioterapeutaAtual().getTelefone());
         campoPrecoFisioterapeuta.setText(String.valueOf(FisioHome.getFisioterapeutaAtual().getPrecoConsulta()));
@@ -78,6 +78,7 @@ public class DetalheFisioterapeutaActivity extends AppCompatActivity {
     private void telaAgendamento(Disponibilidade disponibilidade){
         FisioHome.setDisponibilidadeAtual(disponibilidade);
         Intent intent = new Intent(this, AgendarActivity.class);
+        intent.putExtra("FISIOTERAPEUTA_ID", FisioHome.getFisioterapeutaAtual().getId());
         startActivity(intent);
 
     }

@@ -2,31 +2,26 @@ package com.daniele.fisiohome.model;
 
 import com.daniele.fisiohome.helper.ConfiguracaoFirebase;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.Query;
 
 import java.sql.Blob;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Fisioterapeuta extends Usuario {
 
-    private Endereco enderecoFisioterapeuta;
     private Blob foto;
     private Integer numeroRegistro;
     private double precoConsulta;
     private List<Disponibilidade> disponibilidade;
     private String observacao;
     private String telefone;
+    private String logradouro;
+    private String bairro;
+    private String cep;
+    private Integer numero;
+    private String estado;
+    private String cidade;
 
     public Fisioterapeuta(){}
-
-    public Endereco getEnderecoFisioterapeuta() {
-        return enderecoFisioterapeuta;
-    }
-
-    public void setEnderecoFisioterapeuta(Endereco enderecoFisioterapeuta) {
-        this.enderecoFisioterapeuta = enderecoFisioterapeuta;
-    }
 
     public Blob getFoto() {
         return foto;
@@ -76,7 +71,57 @@ public class Fisioterapeuta extends Usuario {
         this.telefone = telefone;
     }
 
-//    public static List<Fisioterapeuta> getFisioterapeutas() {
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+
+
+    //    public static List<Fisioterapeuta> getFisioterapeutas() {
 //        List<Fisioterapeuta> fisioterapeutas = null;
 //        fisioterapeutas = new ArrayList<Fisioterapeuta>();
 ////        TODO - Buscar fisioterapeutas do Firebase
@@ -142,4 +187,10 @@ public class Fisioterapeuta extends Usuario {
 //   // private static String getUrlEventos() {
 //        return "/evento/getEventos";
 //    }
+
+    public void salvar() {
+        DatabaseReference firebaseRef = ConfiguracaoFirebase.getFirebase();
+        DatabaseReference fisiosRef = firebaseRef.child("fisioterapeutas").child(getId());
+        fisiosRef.setValue(this);
+    }
 }

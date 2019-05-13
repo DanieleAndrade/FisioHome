@@ -7,6 +7,9 @@ public class Agendamento {
     private Pagamento pagamento;
     private Disponibilidade dataHora;
     private Boolean ativa;
+    private String id;
+
+    public Agendamento(String id, String data, Boolean ativa) {}
 
     public Fisioterapeuta getFisioterapeuta() {
         return fisioterapeuta;
@@ -46,5 +49,13 @@ public class Agendamento {
 
     public void setAtiva(Boolean ativa) {
         this.ativa = ativa;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -1,7 +1,6 @@
 package com.daniele.fisiohome.adapters;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +15,6 @@ import java.util.List;
 
 public class FisioterapeutasAdapter extends BaseAdapter {
     private Context contextView;
-    private Activity context;
     private LayoutInflater layoutInflater;
     private List<Fisioterapeuta> fisioterapeutaList;
 
@@ -58,17 +56,18 @@ public class FisioterapeutasAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        LayoutInflater inflater = context.getLayoutInflater();
+//        LayoutInflater inflater = context.getLayoutInflater();
 
-        View listViewItem = inflater.inflate(R.layout.item_lista_fisioterapeutas, null, true);
+        @SuppressLint("ViewHolder")
+        View listViewItem = layoutInflater.inflate(R.layout.item_lista_fisioterapeutas, parent, false);
 
-        TextView textViewNome = (TextView) listViewItem.findViewById(R.id.nome_fisioterapeuta);
-        TextView textViewNumero = (TextView) listViewItem.findViewById(R.id.crm_fisioterapeuta);
+        TextView textViewNome = listViewItem.findViewById(R.id.nome_fisioterapeuta);
+        TextView textViewNumero = listViewItem.findViewById(R.id.crm_fisioterapeuta);
 
         Fisioterapeuta fisioterapeuta = fisioterapeutaList.get(position);
 
         textViewNome.setText(fisioterapeuta.getNome());
-        textViewNumero.setText(fisioterapeuta.getNumeroRegistro());
+        textViewNumero.setText(String.valueOf(fisioterapeuta.getNumeroRegistro()));
 
         return listViewItem;
     }

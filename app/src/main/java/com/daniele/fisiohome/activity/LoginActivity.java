@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private Button botaoAcessar;
+    private Button botaoAcessar, btnCadastrarFisio;
     private Button botaoCadastrar;
     private EditText campoEmail, campoSenha;
 
@@ -79,7 +79,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     @Override
@@ -92,6 +91,13 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        btnCadastrarFisio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cadastroFisioterapeuta();
+            }
+        });
     }
 
     private void inicializaComponentes() {
@@ -99,10 +105,16 @@ public class LoginActivity extends AppCompatActivity {
         campoSenha = findViewById(R.id.editCadastroSenha);
         botaoAcessar = findViewById(R.id.buttonAcesso);
         botaoCadastrar = findViewById(R.id.buttonCadastrar);
+        btnCadastrarFisio = findViewById(R.id.buttonCadastrarFisio);
     }
 
     public void cadastroPaciente() {
         Intent intent = new Intent(this, CadastroPacienteActivity.class);
+        startActivity(intent);
+    }
+
+    public void cadastroFisioterapeuta() {
+        Intent intent = new Intent(this, CadastroFisioterapeutaActivity.class);
         startActivity(intent);
     }
 

@@ -9,7 +9,7 @@
     tools:context=".activity.CadastroFisioterapeutaActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editNomeFisio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -42,7 +42,6 @@
             android:inputType="textPersonName"
             android:text="@string/preco"
             tools:ignore="Autofill,LabelFor" />
-
     </LinearLayout>
 
     <EditText
@@ -95,7 +94,6 @@
             android:inputType="textPersonName"
             android:text="@string/bairro"
             tools:ignore="Autofill,LabelFor" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -121,7 +119,6 @@
             android:inputType="textPersonName"
             android:text="@string/cidade"
             tools:ignore="Autofill,LabelFor" />
-
     </LinearLayout>
 
     <EditText
@@ -134,6 +131,26 @@
         android:text="@string/cep"
         tools:ignore="Autofill,LabelFor" />
 
+    <EditText
+        android:id="@+id/editCadastroEmailFisio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="@string/email"
+        tools:ignore="Autofill,LabelFor" />
+
+    <EditText
+        android:id="@+id/editCadastroSenhaFisio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/senha"
+        tools:ignore="Autofill,LabelFor" />
+
     <Button
         android:id="@+id/buttonCadastrarFisioterapeuta"
         android:layout_width="match_parent"
@@ -141,5 +158,4 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="@string/cadastrar" />
-
 </LinearLayout>
