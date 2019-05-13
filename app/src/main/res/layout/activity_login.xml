@@ -46,19 +46,20 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:padding="10dp"
-        android:text="@string/acessar" />
+        android:text="Acessar" />
 
     <Button
         android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/cadastrar_paciente" />
+        android:text="Cadastrar" />
 
     <Button
         android:id="@+id/buttonCadastrarFisio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/cadastrar_fisioterapeuta" />
+        android:text="Cadastro Fisio"
+        android:visibility="gone"/>
 </LinearLayout>
