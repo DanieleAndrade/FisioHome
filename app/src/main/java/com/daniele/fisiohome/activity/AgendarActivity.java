@@ -11,8 +11,8 @@ import android.widget.Toast;
 import com.daniele.fisiohome.FisioHome;
 import com.daniele.fisiohome.R;
 import com.daniele.fisiohome.model.Agendamento;
-import com.daniele.fisiohome.model.Endereco;
 import com.daniele.fisiohome.model.Fisioterapeuta;
+import com.daniele.fisiohome.model.Pagamento;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -21,6 +21,7 @@ public class AgendarActivity extends AppCompatActivity {
     private TextView campoData, campoLocal, campoNomeFisio, campoMotivo, campoPagamento;
     private Button botaoConfirmarAgendamento;
     DatabaseReference databaseAgendamento;
+    Fisioterapeuta fisioterapeuta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +35,7 @@ public class AgendarActivity extends AppCompatActivity {
         campoPagamento = findViewById(R.id.pagamento_agendamento);
         botaoConfirmarAgendamento = findViewById(R.id.button_confirmar_agendamento);
 
-        Fisioterapeuta fisioterapeuta = FisioHome.getFisioterapeutaAtual();
+        fisioterapeuta = FisioHome.getFisioterapeutaAtual();
 
 
         campoNomeFisio.setText(fisioterapeuta.getNome());
@@ -63,15 +64,30 @@ public class AgendarActivity extends AppCompatActivity {
 
     private void salvarAgendamento() {
 
+        String id = databaseAgendamento.push().getKey();
 
+//            Agendamento agendamento = new Agendamento(id, "06/05/2019", true );
+        Agendamento agendamento = new Agendamento();
+        agendamento.setAtiva(true);
+        agendamento.setDataHora(FisioHome.getDisponibilidadeAtual());
+        agendamento.setFisioterapeuta(fisioterapeuta);
+        agendamento.setId(id);
+        agendamento.setPaciente(FisioHome.getPaciente());
 
-            String id = databaseAgendamento.push().getKey();
+        Pagamento pagamento = new Pagamento();
+        pagamento.setCvv(1);
+        pagamento.setDataValidade("12/2025");
+        pagamento.setNomeCartao("123456789");
+        pagamento.setPaciente(FisioHome.getPaciente());
+        pagamento.setValor(FisioHome.getFisioterapeutaAtual().getPrecoConsulta());
 
-            Agendamento agendamento = new Agendamento(id, "06/05/2019", true );
+        agendamento.setPagamento(pagamento);
 
-            databaseAgendamento.child(id).setValue(agendamento);
+        databaseAgendamento.child(id).setValue(agendamento);
 
-            Toast.makeText(this, "Agendamento realizado com sucesso!", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Agendamento realizado com sucesso!", Toast.LENGTH_LONG).show();
+
+        //startActivity( new Intent(getApplicationContext(), HomeActivity.class));
 
 
     }

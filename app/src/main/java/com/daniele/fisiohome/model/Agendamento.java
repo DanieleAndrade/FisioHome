@@ -9,7 +9,7 @@ public class Agendamento {
     private Boolean ativa;
     private String id;
 
-    public Agendamento(String id, String data, Boolean ativa) {}
+//    public Agendamento(String id, String data, Boolean ativa) {}
 
     public Fisioterapeuta getFisioterapeuta() {
         return fisioterapeuta;

@@ -5,12 +5,15 @@ import android.app.Application;
 
 import com.daniele.fisiohome.model.Disponibilidade;
 import com.daniele.fisiohome.model.Fisioterapeuta;
+import com.daniele.fisiohome.model.Paciente;
 
 public class FisioHome extends Application {
 
     private static Context context;
     private static Fisioterapeuta fisioterapeutaAtual;
     private static Disponibilidade disponibilidadeAtual;
+
+    private static Paciente paciente;
 
     @Override
     public void onCreate() {
@@ -40,5 +43,13 @@ public class FisioHome extends Application {
 
     public static void setDisponibilidadeAtual(Disponibilidade disponibilidadeAtual) {
         FisioHome.disponibilidadeAtual = disponibilidadeAtual;
+    }
+
+    public static Paciente getPaciente() {
+        return paciente;
+    }
+
+    public static void setPaciente(Paciente paciente) {
+        FisioHome.paciente = paciente;
     }
 }

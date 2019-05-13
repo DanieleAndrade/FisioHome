@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.daniele.fisiohome.FisioHome;
 import com.daniele.fisiohome.R;
 import com.daniele.fisiohome.helper.ConfiguracaoFirebase;
 import com.daniele.fisiohome.model.Paciente;
@@ -114,6 +115,8 @@ public class CadastroPacienteActivity extends AppCompatActivity {
                                 //Salvar dados no firebase
                                 String idPaciente = task.getResult().getUser().getUid();
                                 paciente.setId( idPaciente );
+
+                                FisioHome.setPaciente(paciente);
                                 paciente.salvar();
 
                                 Toast.makeText(CadastroPacienteActivity.this,
