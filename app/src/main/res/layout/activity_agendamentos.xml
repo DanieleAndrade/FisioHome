@@ -39,6 +39,7 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/lista__agendamentos_agendados"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_lista_agendamentos" />

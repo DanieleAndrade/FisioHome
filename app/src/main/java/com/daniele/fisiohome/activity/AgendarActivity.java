@@ -87,7 +87,7 @@ public class AgendarActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Agendamento realizado com sucesso!", Toast.LENGTH_LONG).show();
 
-        //startActivity( new Intent(getApplicationContext(), HomeActivity.class));
+        startActivity( new Intent(getApplicationContext(), AgendamentosActivity.class));
 
 
     }

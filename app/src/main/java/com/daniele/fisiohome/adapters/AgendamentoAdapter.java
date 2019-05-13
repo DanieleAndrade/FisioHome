@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.daniele.fisiohome.FisioHome;
 import com.daniele.fisiohome.R;
 import com.daniele.fisiohome.activity.AgendamentosActivity;
 import com.daniele.fisiohome.model.Agendamento;
@@ -52,15 +53,16 @@ public class AgendamentoAdapter extends BaseAdapter {
         TextView hora = view.findViewById(R.id.lista_agendamento_hora);
         Button visualizar = view.findViewById(R.id.lista_agendamento_visualizar);
 
-        nome.setText(agendamento.getFisioterapeuta().getNome());
-        data.setText(agendamento.getDataHora().getDias());
-        hora.setText(agendamento.getDataHora().getHoras());
+
+        nome.setText(FisioHome.getFisioterapeutaAtual().getNome());
+        data.setText(FisioHome.getDisponibilidadeAtual().getDias());
+        hora.setText(FisioHome.getDisponibilidadeAtual().getHoras());
 
         visualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AgendamentosActivity act = (AgendamentosActivity) activity;
-                act.visualizarAgedamento();
+//                AgendamentosActivity act = (AgendamentosActivity) activity;
+//                act.visualizarAgedamento();
             }
 
         });
