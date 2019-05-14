@@ -14,15 +14,24 @@
 
         <Button
             android:id="@+id/button_estado"
-            android:layout_width="0dp"
+            style="?attr/buttonBarButtonStyle"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/estado"
             tools:ignore="ButtonStyle" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|" />
+
         <Button
             android:id="@+id/button_nome"
-            android:layout_width="0dp"
+            style="?attr/buttonBarButtonStyle"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/nome"
