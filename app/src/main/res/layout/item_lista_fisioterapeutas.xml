@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerInside"
                 android:contentDescription="@string/fisioterapeuta"
-                app:srcCompat="@drawable/ic_launcher_background"
+                app:srcCompat="@drawable/padrao"
                 tools:ignore="VectorDrawableCompat"
                 android:layout_marginTop="8dp"/>
 
