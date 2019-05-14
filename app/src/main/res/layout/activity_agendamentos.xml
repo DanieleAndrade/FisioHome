@@ -14,27 +14,43 @@
 
         <Button
             android:id="@+id/button_agendamentos_agendados"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/agendados"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            style="?attr/buttonBarButtonStyle"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|" />
 
         <Button
             android:id="@+id/button__agendamentos_cancelados"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/cancelados"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            style="?attr/buttonBarButtonStyle"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="|" />
 
         <Button
             android:id="@+id/button__agendamentos_realizados"
-            android:layout_width="0dp"
+            android:text="@string/realizados"
+            style="?attr/buttonBarButtonStyle"
+            android:textColor="@color/colorPrimary"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/realizados"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"/>
 
     </LinearLayout>
 
