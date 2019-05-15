@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.CadastroCartaoActivity"></activity>
+        <activity android:name=".activity.DetalheFormaPagamentoActivity"></activity>
+        <activity android:name=".activity.CadastroCartaoActivity" />
         <activity android:name=".activity.FormaPagamentoActivity" />
         <activity android:name=".activity.DetalheFisioterapeutaActivity" />
         <activity android:name=".activity.ConsultaActivity" />

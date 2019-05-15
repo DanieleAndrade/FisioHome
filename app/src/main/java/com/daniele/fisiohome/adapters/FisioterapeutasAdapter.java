@@ -39,20 +39,6 @@ public class FisioterapeutasAdapter extends BaseAdapter {
         return 0;
     }
 
-//    @Override
-//    public View getView(int position, View view, ViewGroup parent) {
-//        @SuppressLint("ViewHolder")
-//        View v = layoutInflater.inflate(R.layout.item_lista_fisioterapeutas, parent, false);
-//
-//        TextView textViewNomeFisio = v.findViewById(R.id.nome_fisioterapeuta);
-//        TextView textViewCRM = v.findViewById(R.id.crm_fisioterapeuta);
-//
-//        textViewNomeFisio.setText(fisioterapeutaList.get(position).getNome());
-//        textViewCRM.setText(String.valueOf(fisioterapeutaList.get(position).getNumeroRegistro()));
-//
-//        return v;
-//    }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
