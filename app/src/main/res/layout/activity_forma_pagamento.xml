@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.FormaPagamentoActivity">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Formas de pagamento"
+        android:textSize="14sp"
+        android:padding="16dp"/>
+
+    <ListView
+        android:id="@+id/lista_formas_de_pagamento"
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        tools:listitem="@layout/item_lista_forma_pagamento">
+
+    </ListView>
+
+    <Button
+        android:id="@+id/button_adicionar_forma_pagamento"
+        style="?attr/buttonBarButtonStyle"
+        android:layout_width="425dp"
+        android:layout_height="wrap_content"
+        android:text="Adicionar forma de pagamento"
+        android:textColor="@color/colorPrimary"
+        tools:ignore="ButtonStyle" />
+
+</LinearLayout>

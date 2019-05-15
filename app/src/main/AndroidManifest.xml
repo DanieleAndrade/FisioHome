@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DetalheFisioterapeutaActivity"></activity>
+        <activity android:name=".activity.CadastroCartaoActivity"></activity>
+        <activity android:name=".activity.FormaPagamentoActivity" />
+        <activity android:name=".activity.DetalheFisioterapeutaActivity" />
         <activity android:name=".activity.ConsultaActivity" />
         <activity android:name=".activity.VisualizarMedicoActivity" />
         <activity android:name=".activity.AgendamentosActivity" />
@@ -18,7 +20,7 @@
         <activity android:name=".activity.CadastroFisioterapeutaActivity" />
         <activity android:name=".activity.TipoUsuarioActivity" />
         <activity android:name=".activity.CadastroPacienteActivity" />
-        <activity android:name=".activity.LoginActivity" >
+        <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

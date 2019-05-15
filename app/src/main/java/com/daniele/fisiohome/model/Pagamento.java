@@ -6,8 +6,8 @@ public class Pagamento {
     private Integer cvv;
     private String nomeCartao;
     private String dataValidade;
-    private double valor;
     private Paciente paciente;
+    private String pais;
 
     public String getNumeroCartao() {
         return numeroCartao;
@@ -41,14 +41,6 @@ public class Pagamento {
         this.dataValidade = dataValidade;
     }
 
-    public double getValor() {
-        return valor;
-    }
-
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
     public Paciente getPaciente() {
         return paciente;
     }
@@ -56,4 +48,8 @@ public class Pagamento {
     public void setPaciente(Paciente paciente) {
         this.paciente = paciente;
     }
+
+    public String getPais() { return pais; }
+
+    public void setPais(String pais) { this.pais = pais; }
 }

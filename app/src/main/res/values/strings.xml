@@ -47,4 +47,10 @@
     <string name="crm">CRM</string>
     <string name="cadastrar_paciente">Cadastrar Paciente</string>
     <string name="cadastrar_fisioterapeuta">Cadastrar Fisioterapeuta</string>
+    <string name="numero_do_cartao">Número do cartão</string>
+    <string name="data_de_venc">Data de venc.</string>
+    <string name="cvv">CVV</string>
+    <string name="pais">País</string>
+    <string name="avancar">Avançar</string>
+    <string name="cadastrar">Cadastrar</string>
 </resources>

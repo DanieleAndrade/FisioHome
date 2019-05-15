@@ -79,7 +79,6 @@ public class AgendarActivity extends AppCompatActivity {
         pagamento.setDataValidade("12/2025");
         pagamento.setNomeCartao("123456789");
         pagamento.setPaciente(FisioHome.getPaciente());
-        pagamento.setValor(FisioHome.getFisioterapeutaAtual().getPrecoConsulta());
 
         agendamento.setPagamento(pagamento);
 
