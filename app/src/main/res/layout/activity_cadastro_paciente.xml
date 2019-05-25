@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/bg_edit_text"
         android:ems="10"
-        android:hint="Nome"
+        android:hint="@string/nome"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         tools:ignore="Autofill" />
@@ -57,18 +57,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_edit_text"
+        android:maxLength="11"
         android:ems="10"
-        android:hint="CPF"
-        android:inputType="textEmailAddress"
+        android:hint="@string/cpf"
+        android:inputType="number"
         android:padding="10dp"
         tools:ignore="Autofill" />
+
     <Button
         android:id="@+id/botaoCadastrarPaciente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/orangeButton"
         android:padding="10dp"
-        android:text="Cadastrar"
-        android:textColor="@color/whiteButton"
-        android:background="@color/orangeButton"/>
+        android:text="@string/cadastrar"
+        android:textColor="@color/whiteButton" />
 </LinearLayout>
