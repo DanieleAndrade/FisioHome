@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.daniele.fisiohome.FisioHome;
 import com.daniele.fisiohome.R;
 import com.daniele.fisiohome.helper.ConfiguracaoFirebase;
+import com.daniele.fisiohome.model.Endereco;
 import com.daniele.fisiohome.model.Paciente;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,7 +29,7 @@ import java.util.Objects;
 public class CadastroPacienteActivity extends AppCompatActivity {
 
     private Button botaoCadastrarPaciente;
-    private EditText campoEmail, campoSenha;
+    private EditText campoEmail, campoSenha, campoRua, campoCidade, campoEstado, campoNumero, campoBairro;
     private EditText campoNomePaciente, campoCPF;
     private FirebaseAuth autenticacao;
     private Paciente paciente;
@@ -50,6 +51,11 @@ public class CadastroPacienteActivity extends AppCompatActivity {
                 String senha = campoSenha.getText().toString().trim();
                 String nome = campoNomePaciente.getText().toString().trim();
                 String cpf = campoCPF.getText().toString().trim();
+                String rua = campoRua.getText().toString().trim();
+                String cidade = campoCidade.getText().toString().trim();
+                String estado = campoEstado.getText().toString().trim();
+                String bairro = campoBairro.getText().toString().trim();
+                String numero = campoNumero.getText().toString().trim();
 
                 if( !nome.isEmpty() ){
                     if( !email.isEmpty() ){
@@ -60,7 +66,22 @@ public class CadastroPacienteActivity extends AppCompatActivity {
                                 paciente.setEmail(email);
                                 paciente.setSenha(senha);
                                 paciente.setCpf(cpf);
-                                cadastrar( paciente );
+
+                                if(!rua.isEmpty() && !bairro.isEmpty() && !cidade.isEmpty() && !numero.isEmpty() && !estado.isEmpty()){
+                                    Endereco endereco = new Endereco();
+                                    endereco.setBairro(bairro);
+                                    endereco.setCidade(cidade);
+                                    endereco.setLogradouro(rua);
+                                    endereco.setEstado(estado);
+                                    endereco.setNumero(numero);
+                                    paciente.setEndereco(endereco);
+                                    cadastrar( paciente );
+
+                                }else{
+                                    Toast.makeText(CadastroPacienteActivity.this,
+                                            "Preencha o endereço completo!",
+                                            Toast.LENGTH_SHORT).show();
+                                }
 
                             }else{
                                 Toast.makeText(CadastroPacienteActivity.this,
@@ -167,6 +188,11 @@ public class CadastroPacienteActivity extends AppCompatActivity {
         campoCPF = findViewById(R.id.editCPF);
         campoNomePaciente = findViewById(R.id.editNomePaciente);
         botaoCadastrarPaciente = findViewById(R.id.botaoCadastrarPaciente);
+        campoRua = findViewById(R.id.campoRua);
+        campoCidade = findViewById(R.id.campoCidade);
+        campoEstado = findViewById(R.id.campoEstado);
+        campoBairro = findViewById(R.id.campoBairro);
+        campoNumero = findViewById(R.id.campoNumero);
     }
 
     public void home() {
