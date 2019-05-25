@@ -9,66 +9,165 @@
     android:orientation="vertical"
     tools:context=".activity.LoginActivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="20dp"
-        android:contentDescription="@string/logo"
-        app:srcCompat="@drawable/logo" />
-
-    <EditText
-        android:id="@+id/editCadastroEmail"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_edit_text"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        tools:ignore="Autofill" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/logo"
+                app:srcCompat="@drawable/logo" />
+
+            <EditText
+                android:id="@+id/editCadastroEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                tools:ignore="Autofill" />
 
 
-    <EditText
-        android:id="@+id/editCadastroSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="-2dp"
-        android:background="@drawable/bg_edit_text"
-        android:ems="10"
-        android:hint="@string/senha"
-        android:inputType="textPassword"
-        android:padding="10dp"
-        tools:ignore="Autofill" />
+            <EditText
+                android:id="@+id/editCadastroSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-2dp"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="@string/senha"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                tools:ignore="Autofill" />
 
-    <EditText
-        android:id="@+id/editNomePaciente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_edit_text"
-        android:ems="10"
-        android:hint="Nome"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        tools:ignore="Autofill" />
+            <EditText
+                android:id="@+id/editNomePaciente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="Nome"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                tools:ignore="Autofill" />
 
-    <EditText
-        android:id="@+id/editCPF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_edit_text"
-        android:ems="10"
-        android:hint="CPF"
-        android:inputType="textEmailAddress"
-        android:padding="10dp"
-        tools:ignore="Autofill" />
-    <Button
-        android:id="@+id/botaoCadastrarPaciente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:padding="10dp"
-        android:text="Cadastrar"
-        android:textColor="@color/whiteButton"
-        android:background="@color/orangeButton"/>
+            <EditText
+                android:id="@+id/editCPF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit_text"
+                android:ems="10"
+                android:hint="CPF"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                tools:ignore="Autofill" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Endereço"
+                    android:textSize="16dp"
+                    android:textStyle="bold|normal"
+                    android:textColor="@color/colorPrimary"/>
+
+                <EditText
+                    android:id="@+id/campoRua"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text"
+                    android:ems="10"
+                    android:hint="Rua"
+                    android:padding="10dp"
+                    tools:ignore="Autofill" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/campoBairro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edit_text"
+                        android:ems="10"
+                        android:hint="Bairro"
+                        android:padding="10dp"
+                        tools:ignore="Autofill" />
+
+                    <EditText
+                        android:id="@+id/campoNumero"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edit_text"
+                        android:ems="10"
+                        android:hint="Numero"
+                        android:padding="10dp"
+                        tools:ignore="Autofill" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/campoCidade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edit_text"
+                        android:ems="10"
+                        android:hint="Cidade"
+                        android:padding="10dp"
+                        tools:ignore="Autofill" />
+
+                    <EditText
+                        android:id="@+id/campoEstado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_edit_text"
+                        android:ems="10"
+                        android:hint="Estado"
+                        android:padding="10dp"
+                        tools:ignore="Autofill" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/botaoCadastrarPaciente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:padding="10dp"
+                    android:text="Cadastrar"
+                    android:textColor="@color/whiteButton"
+                    android:background="@color/orangeButton"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>
