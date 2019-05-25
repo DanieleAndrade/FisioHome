@@ -138,6 +138,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         AlertDialog dialog = dialogEstado.create();
+        dialog.show();
     }
 
 //    private void buscarFisioterapeutas() {
