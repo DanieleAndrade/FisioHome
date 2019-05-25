@@ -37,10 +37,21 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:contentDescription="@string/fisioterapeuta"
-                android:src="@drawable/ic_launcher_background" />
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:contentDescription="@string/local"
+                android:src="@drawable/person" />
+
+            <TextView
+                android:id="@+id/local_fisio_detalhe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/local"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
+                android:layout_weight="2"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,17 +89,34 @@
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="@string/localizacao"
-                android:src="@drawable/ic_launcher_background" />
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:contentDescription="@string/local"
+                android:src="@drawable/location" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:text="Local:  " />
 
             <TextView
                 android:id="@+id/local_fisio_detalhe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/localizacao" />
+                android:text="@string/local"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
+                android:layout_weight="2"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -102,18 +130,22 @@
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="@string/horarios"
-                android:src="@drawable/ic_launcher_background" />
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:contentDescription="Horários"
+                android:src="@drawable/clock" />
 
             <TextView
                 android:id="@+id/horario_fisio_detalhe"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/horarios" />
-
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:text="Horários" />
 
         </LinearLayout>
 
@@ -135,18 +167,36 @@
             android:orientation="horizontal"
             tools:ignore="UseCompoundDrawables">
 
+
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="@string/contato"
-                android:src="@drawable/ic_launcher_background" />
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:contentDescription="@string/local"
+                android:src="@drawable/phone" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:text="Contato:  " />
 
             <TextView
                 android:id="@+id/contato_fisio_detalhe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/contato" />
+                android:text="contato"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
+                android:layout_weight="2"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -160,39 +210,55 @@
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:contentDescription="@string/preco"
-                android:src="@drawable/ic_launcher_background" />
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:contentDescription="@string/local"
+                android:src="@drawable/money" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-black"
+                android:text="Valor:  " />
 
             <TextView
                 android:id="@+id/preco_fisio_detalhe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/preco" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_valor_preco"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="horizontal">
+                android:text="preco"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
+                android:layout_weight="2"/>
 
             <TextView
                 android:id="@+id/cifrao"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="@string/rs_cifrao" />
+                android:text="@string/rs_cifrao"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"/>
 
             <TextView
                 android:id="@+id/valor_preco"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginVertical="16dp"
                 android:text="@string/_50_virgula_00" />
         </LinearLayout>
+
     </LinearLayout>
 </ScrollView>
