@@ -46,14 +46,18 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:padding="10dp"
-        android:text="Acessar" />
+        android:text="Acessar"
+        android:textColor="@color/whiteButton"
+        android:background="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/buttonCadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Cadastrar" />
+        android:text="Cadastrar"
+        android:textColor="@color/whiteButton"
+        android:background="@color/orangeButton"/>
 
     <Button
         android:id="@+id/buttonCadastrarFisio"
