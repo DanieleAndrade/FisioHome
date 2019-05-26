@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import com.daniele.fisiohome.FisioHome;
 import com.daniele.fisiohome.R;
 import com.daniele.fisiohome.adapters.FisioterapeutasAdapter;
+import com.daniele.fisiohome.component.DateDialog;
 import com.daniele.fisiohome.helper.ConfiguracaoFirebase;
 import com.daniele.fisiohome.model.Fisioterapeuta;
 import com.google.firebase.database.DataSnapshot;
@@ -58,6 +60,19 @@ public class HomeActivity extends AppCompatActivity {
     protected void onStart() {
 
         super.onStart();
+
+        Button dataConsulta=(Button)findViewById(R.id.data_consulta);
+        dataConsulta.setOnFocusChangeListener(new View.OnFocusChangeListener(){
+            public void onFocusChange(View view, boolean hasfocus){
+                if(hasfocus){
+                    DateDialog dialog=new DateDialog(view);
+                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                    dialog.show(ft, "DatePicker");
+
+                }
+            }
+
+        });
 
         fisioterapeutasRef.addValueEventListener(new ValueEventListener() {
 

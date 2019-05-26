@@ -16,11 +16,15 @@ import com.daniele.fisiohome.adapters.HorariosFisioAdapter;
 import com.daniele.fisiohome.model.Disponibilidade;
 import com.daniele.fisiohome.model.Endereco;
 import com.daniele.fisiohome.model.Fisioterapeuta;
+import com.prolificinteractive.materialcalendarview.CalendarDay;
+import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
+import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 
 import java.util.List;
 
 public class DetalheFisioterapeutaActivity extends AppCompatActivity {
 
+    private MaterialCalendarView calendarView;
     private TextView campoNomeFisioterapeuta;
     private TextView campoNumeroRegistroFisioterapeuta;
     private TextView campoLocalFisioterapeuta;
@@ -42,6 +46,9 @@ public class DetalheFisioterapeutaActivity extends AppCompatActivity {
         campoContatoFisioterapeuta = findViewById(R.id.contato_fisio_detalhe);
         campoPrecoFisioterapeuta = findViewById(R.id.valor_preco);
         campoHorariosFisioterapeuta = findViewById(R.id.lista_horarios_detalhe);
+        //calendarView = findViewById(R.id.calendarView);
+
+        //configuraCalendarView();
 
         campoNomeFisioterapeuta.setText(FisioHome.getFisioterapeutaAtual().getNome());
         campoNumeroRegistroFisioterapeuta.setText(String.valueOf(FisioHome.getFisioterapeutaAtual().getNumeroRegistro()));
@@ -82,4 +89,17 @@ public class DetalheFisioterapeutaActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+//    public void configuraCalendarView(){
+//
+//        CharSequence meses[] = {"Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"};
+//        calendarView.setTitleMonths(meses);
+//
+//        calendarView.setOnMonthChangedListener(new OnMonthChangedListener() {
+//            @Override
+//            public void onMonthChanged(MaterialCalendarView materialCalendarView, CalendarDay calendarDay) {
+//
+//            }
+//        });
+//    }
 }

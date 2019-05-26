@@ -3,7 +3,7 @@ package com.daniele.fisiohome.model;
 public class Pagamento {
 
     private String numeroCartao;
-    private Integer cvv;
+    private String cvv;
     private String nomeCartao;
     private String dataValidade;
     private Paciente paciente;
@@ -17,11 +17,11 @@ public class Pagamento {
         this.numeroCartao = numeroCartao;
     }
 
-    public Integer getCvv() {
+    public String getCvv() {
         return cvv;
     }
 
-    public void setCvv(Integer cvv) {
+    public void setCvv(String cvv) {
         this.cvv = cvv;
     }
 

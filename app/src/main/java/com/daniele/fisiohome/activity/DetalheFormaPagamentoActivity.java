@@ -5,7 +5,8 @@ import android.os.Bundle;
 
 import com.daniele.fisiohome.R;
 
-public class DetalheFormaPagamentoActivity extends AppCompatActivity {
+public class
+DetalheFormaPagamentoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

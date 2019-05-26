@@ -7,7 +7,7 @@
     android:layout_margin="16dp"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".activity.LoginActivity">
+    tools:context="com.daniele.fisiohome.activity.CadastroPacienteActivity">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -66,6 +66,7 @@ public class CadastroFisioterapeutaActivity extends AppCompatActivity {
                 String cidade = "Fortaleza";
                 String nome = "Teste Fisio 1";
                 String email = "q@gmail.com";
+
                 String senha = "123654789";
                 String tipo = "tipo";
 

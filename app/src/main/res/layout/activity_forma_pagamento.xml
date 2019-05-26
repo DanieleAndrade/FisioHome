@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".activity.FormaPagamentoActivity">
 
-    <EditText
+    <TextView
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

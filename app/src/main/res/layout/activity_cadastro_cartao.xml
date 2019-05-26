@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:orientation="vertical"
-    tools:context=".activity.CadastroCartaoActivity">
+    tools:context="com.daniele.fisiohome.activity.CadastroCartaoActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,6 +14,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/edit_numero_cartao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
@@ -28,6 +29,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/edit_data_venc"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -38,6 +40,7 @@
                 tools:targetApi="o" />
 
             <EditText
+                android:id="@+id/edit_cvv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
@@ -49,6 +52,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/edit_pais_cartao"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_marginStart="16dp"
@@ -68,6 +72,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/button_cadastrar_cartao"
         android:layout_width="match_parent"
         android:layout_marginTop="30dp"
         android:layout_height="wrap_content"

@@ -40,9 +40,8 @@ public class AgendarActivity extends AppCompatActivity {
 
         campoNomeFisio.setText(fisioterapeuta.getNome());
 
-       // Endereco endereco = fisioterapeuta.getEnderecoFisioterapeuta();
-       // String local = endereco.getLogradouro() + " - " + String.valueOf(endereco.getNumero()) + ", " + endereco.getCidade();
-        campoLocal.setText(FisioHome.getFisioterapeutaAtual().getLogradouro() + " - " + String.valueOf(FisioHome.getFisioterapeutaAtual().getNumero()) + ", " + FisioHome.getFisioterapeutaAtual().getCidade() );
+        String local = FisioHome.getFisioterapeutaAtual().getLogradouro() + " - " + String.valueOf(FisioHome.getFisioterapeutaAtual().getNumero()) + ", " + FisioHome.getFisioterapeutaAtual().getCidade();
+        campoLocal.setText(local);
 
         Intent intent = getIntent();
 
@@ -50,20 +49,16 @@ public class AgendarActivity extends AppCompatActivity {
         String id = intent.getStringExtra("FISIOTERAPEUTA_ID");
 
         databaseAgendamento = FirebaseDatabase.getInstance().getReference("agendamentos").child(id);
-
-
         botaoConfirmarAgendamento.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-
                 salvarAgendamento();
             }
         });
     }
 
     private void salvarAgendamento() {
-
         String id = databaseAgendamento.push().getKey();
 
 //            Agendamento agendamento = new Agendamento(id, "06/05/2019", true );
@@ -75,7 +70,6 @@ public class AgendarActivity extends AppCompatActivity {
         agendamento.setPaciente(FisioHome.getPaciente());
 
         Pagamento pagamento = new Pagamento();
-        pagamento.setCvv(1);
         pagamento.setDataValidade("12/2025");
         pagamento.setNomeCartao("123456789");
         pagamento.setPaciente(FisioHome.getPaciente());
@@ -86,11 +80,8 @@ public class AgendarActivity extends AppCompatActivity {
 
         Toast.makeText(this, "Agendamento realizado com sucesso!", Toast.LENGTH_LONG).show();
 
-        startActivity( new Intent(getApplicationContext(), AgendamentosActivity.class));
-
-
+        startActivity(new Intent(getApplicationContext(), AgendamentosActivity.class));
     }
-
 }
 
 

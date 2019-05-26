@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    tools:context=".activity.DetalheFisioterapeutaActivity">
+    tools:context="com.daniele.fisiohome.activity.DetalheFisioterapeutaActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!--TODO - Falta Componente de data-->
+        <!--TODO - Falta Componente de data -->
 
-        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+        <!--<com.prolificinteractive.materialcalendarview.MaterialCalendarView
             android:id="@+id/calendarView"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -22,12 +22,17 @@
             android:padding="16dp"
             app:mcv_selectionColor="#00F"
             app:mcv_showOtherDates="all"
-            app:mcv_tileSize="50dp" />
+            app:mcv_tileSize="50dp" />-->
 
         <!--<DatePicker-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="100dp"-->
         <!--&gt;</DatePicker>-->
+
+        <Button
+            android:id="@+id/data_consulta"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
 
         <LinearLayout
             android:layout_width="match_parent"

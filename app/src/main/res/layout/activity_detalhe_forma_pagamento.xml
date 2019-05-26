@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.DetalheFormaPagamentoActivity">
+    tools:context="com.daniele.fisiohome.activity.DetalheFormaPagamentoActivity">
 
 </android.support.constraint.ConstraintLayout>
