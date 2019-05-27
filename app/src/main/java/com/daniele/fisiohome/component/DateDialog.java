@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.daniele.fisiohome.FisioHome;
+import com.daniele.fisiohome.model.Disponibilidade;
+
 import java.util.Calendar;
 
 @SuppressLint("ValidFragment")
@@ -20,7 +23,6 @@ public class DateDialog extends DialogFragment implements DatePickerDialog.OnDat
         }
 
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-
 
         final Calendar c = Calendar.getInstance();
         int ano = c.get(Calendar.YEAR);
@@ -34,6 +36,18 @@ public class DateDialog extends DialogFragment implements DatePickerDialog.OnDat
     public void onDateSet(DatePicker view, int ano, int mes, int dia) {
         String data = dia + "-" + (mes+1) + "-" + ano;
         dataConsulta.setText(data);
+        FisioHome.setDataAtual(data);
+        Disponibilidade disponibilidade = FisioHome.getDisponibilidadeAtual();
+        if(disponibilidade != null){
+            disponibilidade.setDias(data);
+            FisioHome.setDisponibilidadeAtual(disponibilidade);
+        } else {
+            Disponibilidade disponibilidade1 = new Disponibilidade();
+            disponibilidade1.setDias(data);
+            FisioHome.setDisponibilidadeAtual(disponibilidade1);
+        }
+
+
     }
 
 }

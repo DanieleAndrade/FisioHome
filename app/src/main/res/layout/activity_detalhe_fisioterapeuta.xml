@@ -32,7 +32,8 @@
         <Button
             android:id="@+id/data_consulta"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:hint="Escolha a data"/>
 
         <LinearLayout
             android:layout_width="match_parent"

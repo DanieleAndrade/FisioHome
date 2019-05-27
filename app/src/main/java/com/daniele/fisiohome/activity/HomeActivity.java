@@ -61,19 +61,6 @@ public class HomeActivity extends AppCompatActivity {
 
         super.onStart();
 
-        Button dataConsulta=(Button)findViewById(R.id.data_consulta);
-        dataConsulta.setOnFocusChangeListener(new View.OnFocusChangeListener(){
-            public void onFocusChange(View view, boolean hasfocus){
-                if(hasfocus){
-                    DateDialog dialog=new DateDialog(view);
-                    FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                    dialog.show(ft, "DatePicker");
-
-                }
-            }
-
-        });
-
         fisioterapeutasRef.addValueEventListener(new ValueEventListener() {
 
             @Override

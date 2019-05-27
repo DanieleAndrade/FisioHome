@@ -12,6 +12,7 @@ public class FisioHome extends Application {
     private static Context context;
     private static Fisioterapeuta fisioterapeutaAtual;
     private static Disponibilidade disponibilidadeAtual;
+    private static String dataAtual;
 
     private static Paciente paciente;
 
@@ -51,5 +52,13 @@ public class FisioHome extends Application {
 
     public static void setPaciente(Paciente paciente) {
         FisioHome.paciente = paciente;
+    }
+
+    public static String getDataAtual() {
+        return dataAtual;
+    }
+
+    public static void setDataAtual(String dataAtual) {
+        FisioHome.dataAtual = dataAtual;
     }
 }

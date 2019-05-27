@@ -11,7 +11,9 @@ import android.widget.Toast;
 import com.daniele.fisiohome.FisioHome;
 import com.daniele.fisiohome.R;
 import com.daniele.fisiohome.model.Agendamento;
+import com.daniele.fisiohome.model.Disponibilidade;
 import com.daniele.fisiohome.model.Fisioterapeuta;
+import com.daniele.fisiohome.model.Paciente;
 import com.daniele.fisiohome.model.Pagamento;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -37,11 +39,21 @@ public class AgendarActivity extends AppCompatActivity {
 
         fisioterapeuta = FisioHome.getFisioterapeutaAtual();
 
+        Disponibilidade disponibilidade = FisioHome.getDisponibilidadeAtual();
+        if (disponibilidade != null) {
+            campoData.setText(disponibilidade.getDias() + " - " + disponibilidade.getHoras());
+        }
+
+        Paciente paciente = FisioHome.getPaciente();
+        if (paciente != null) {
+            String local = paciente.getEndereco().getLogradouro() + " - " + String.valueOf(paciente.getEndereco().getNumero()) + ", " + paciente.getEndereco().getCidade();
+            campoLocal.setText(local);
+        } else {
+            String local = FisioHome.getFisioterapeutaAtual().getLogradouro() + " - " + String.valueOf(FisioHome.getFisioterapeutaAtual().getNumero()) + ", " + FisioHome.getFisioterapeutaAtual().getCidade();
+            campoLocal.setText(local);
+        }
 
         campoNomeFisio.setText(fisioterapeuta.getNome());
-
-        String local = FisioHome.getFisioterapeutaAtual().getLogradouro() + " - " + String.valueOf(FisioHome.getFisioterapeutaAtual().getNumero()) + ", " + FisioHome.getFisioterapeutaAtual().getCidade();
-        campoLocal.setText(local);
 
         Intent intent = getIntent();
 

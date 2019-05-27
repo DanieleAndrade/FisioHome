@@ -2,9 +2,11 @@ package com.daniele.fisiohome.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -13,6 +15,7 @@ import com.daniele.fisiohome.FisioHome;
 import com.daniele.fisiohome.R;
 import com.daniele.fisiohome.adapters.FisioterapeutasAdapter;
 import com.daniele.fisiohome.adapters.HorariosFisioAdapter;
+import com.daniele.fisiohome.component.DateDialog;
 import com.daniele.fisiohome.model.Disponibilidade;
 import com.daniele.fisiohome.model.Endereco;
 import com.daniele.fisiohome.model.Fisioterapeuta;
@@ -31,6 +34,7 @@ public class DetalheFisioterapeutaActivity extends AppCompatActivity {
     private ListView campoHorariosFisioterapeuta;
     private TextView campoContatoFisioterapeuta;
     private TextView campoPrecoFisioterapeuta;
+    Button dataConsulta;
 
     HorariosFisioAdapter horariosFisioAdapter;
 
@@ -46,6 +50,7 @@ public class DetalheFisioterapeutaActivity extends AppCompatActivity {
         campoContatoFisioterapeuta = findViewById(R.id.contato_fisio_detalhe);
         campoPrecoFisioterapeuta = findViewById(R.id.valor_preco);
         campoHorariosFisioterapeuta = findViewById(R.id.lista_horarios_detalhe);
+        dataConsulta=(Button)findViewById(R.id.data_consulta);
         //calendarView = findViewById(R.id.calendarView);
 
         //configuraCalendarView();
@@ -68,6 +73,27 @@ public class DetalheFisioterapeutaActivity extends AppCompatActivity {
         }
     }
 
+//    @Override
+//    protected void onStart() {
+//
+//        super.onStart();
+
+//        if (dataConsulta != null) {
+//
+//            dataConsulta.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+//                public void onFocusChange(View view, boolean hasfocus) {
+//                    if (hasfocus) {
+//                        DateDialog dialog = new DateDialog(view);
+//                        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+//                        dialog.show(ft, "DatePicker");
+//
+//                    }
+//                }
+//
+//            });
+//        }
+//    }
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -77,7 +103,21 @@ public class DetalheFisioterapeutaActivity extends AppCompatActivity {
                 Fisioterapeuta fisioterapeuta = FisioHome.getFisioterapeutaAtual();
                 List<Disponibilidade> disponibilidades = fisioterapeuta.getDisponibilidade();
 
-                telaAgendamento(disponibilidades.get(position));
+                String dia = disponibilidades.get(position).getDias();
+                disponibilidades.get(position).setDias(FisioHome.getDataAtual());
+                if (dia != null && !dia.equals("Escolha a data")){
+                    telaAgendamento(disponibilidades.get(position));
+                }
+
+            }
+        });
+
+        dataConsulta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DateDialog dialog = new DateDialog(v);
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                dialog.show(ft, "DatePicker");
             }
         });
     }
